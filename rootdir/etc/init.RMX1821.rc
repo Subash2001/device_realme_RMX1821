@@ -37,3 +37,8 @@ on post-fs
     # Bind mount libdpframework
     mount none /system/lib/libdpframework.so /vendor/lib/libdpframework.so bind
     mount none /system/lib64/libdpframework.so /vendor/lib64/libdpframework.so bind
+    # Unmount the overridden fstab because the SELinux label is incorrect
+    # and some MTK daemons can crash because of that
+    # (at post-fs, the fstab has already been used to mount the partitions,
+    #  so it is fine to just revert back)
+    umount /vendor/etc/fstab.mt6771

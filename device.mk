@@ -38,7 +38,7 @@ PRODUCT_COPY_FILES += \
 
 # Audio Configs
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy_configuration.xml
+    $(DEVICE_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_configuration.xml
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -51,6 +51,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.mt6771 \
+    fstab.mt6771_vendor \
     init.RMX1821.rc \
     init.safailnet.rc \
     init.oppo.fingerprints.rc \
@@ -71,6 +72,7 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
+PRODUCT_TARGET_VNDK_VERSION := 29
 
 # HIDL
 PRODUCT_PACKAGES += \
