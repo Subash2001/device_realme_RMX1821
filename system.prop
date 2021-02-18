@@ -78,6 +78,10 @@ ro.kernel.zio=38,108,105,16
 # Disable dirty region for Mali
 #debug.hwui.render_dirty_regions=false
 
+# LMKD
+ro.config.low_ram=false
+ro.lmk.log_stats=true
+
 #ifneq ($(strip $(ODM_HQ_EDIT)),yes)
 #liyan@ODM.Multimedia.LCD  2018/10/03 add for LCD bring up
 #ro.sf.lcd_density=480
