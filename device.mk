@@ -63,7 +63,8 @@ PRODUCT_PACKAGES += \
     init.safailnet.rc \
     init.oppo.fingerprints.rc \
     init.ago.rc \
-    fstab.enableswap
+    fstab.enableswap \
+    perf_profile.sh
 
 # Doze
 PRODUCT_PACKAGES += \
