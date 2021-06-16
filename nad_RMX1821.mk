@@ -21,6 +21,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common Lineage stuff
 $(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
 
+# Gapps
+TARGET_BOOT_ANIMATION_RES:= 720
+TARGET_GAPPS_ARCH := arm64
+IS_PHONE := true
+
 # Inherit from Realme RMX1821
 $(call inherit-product, device/realme/RMX1821/device.mk)
 
