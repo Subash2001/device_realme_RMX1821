@@ -115,3 +115,6 @@ $(call inherit-product, vendor/mediatek/ims/mtk-engi.mk)
 
 # Call proprietary blob setup
 $(call inherit-product-if-exists, vendor/realme/RMX1821/RMX1821-vendor.mk)
+
+# Parts
+$(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
