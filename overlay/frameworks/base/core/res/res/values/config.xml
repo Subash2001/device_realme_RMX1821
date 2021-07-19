@@ -397,4 +397,10 @@
     <!-- Smart replies in notifications: Whether we disable the feature unless the app targets P -->
     <bool name="config_smart_replies_in_notifications_requires_targeting_p">false</bool>
 
+    <!-- Controls whether system buttons use all caps for text -->
+    <bool name="config_buttonTextAllCaps">false</bool>
+
+    <!-- Screen off delay --> 
+    <integer name="config_screen_off_delay">0</integer>
+	
 </resources>
