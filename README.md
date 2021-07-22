@@ -19,12 +19,14 @@ Front Camera | 13 MP, f/2.0, (wide), 1/3.1", 1.12µm
 
 ---
 
-This device tree can be used to build LineageOS-17.1 for Realme 3/3i devices with RealmeUI vendor
+This device tree can be used to build Nusantara OS Android11 for Realme 3/3i devices with RealmeUI vendor
 
-## Applying [patches](https://github.com/Maanush2004/android_device_realme_RMX1821/tree/lineage-17.1-rmui/patches) in their respective directories of ROM source is mandatory.
-
-## For faceunlock, clone [android_external_motorola_faceunlock](https://gitlab.com/SamarV-121/android_external_motorola_faceunlock) into external/motorola/faceunlock.
+## Applying [patches](https://github.com/CyberTechWorld/android_device_realme_RMX1821/tree/havoc11/patches) in their respective directories of ROM source is mandatory.
 
 ## For IMS,
 ## clone [vendor_mediatek_ims](https://github.com/PixelExperience/vendor_mediatek_ims) into vendor/mediatek/ims and
 ## clone [vendor_mediatek_interfaces](https://github.com/PixelExperience/vendor_mediatek_interfaces) into vendor/mediatek/interfaces
+```
+git clone https://github.com/PixelExperience/vendor_mediatek_ims vendor/mediatek/ims
+git clone https://github.com/PixelExperience/vendor_mediatek_interfaces vendor/mediatek/interfaces
+```
