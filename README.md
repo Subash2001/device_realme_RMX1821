@@ -21,7 +21,7 @@ Front Camera | 13 MP, f/2.0, (wide), 1/3.1", 1.12µm
 
 This device tree can be used to build Nusantara OS Android11 for Realme 3/3i devices with RealmeUI vendor
 
-## Applying [patches](https://github.com/CyberTechWorld/android_device_realme_RMX1821/tree/havoc11/patches) in their respective directories of ROM source is mandatory.
+## Applying [patches](https://github.com/CyberTechWorld/android_device_realme_RMX1821/tree/nad11/patches) in their respective directories of ROM source is mandatory.
 
 ## For IMS,
 ## clone [vendor_mediatek_ims](https://github.com/PixelExperience/vendor_mediatek_ims) into vendor/mediatek/ims and
