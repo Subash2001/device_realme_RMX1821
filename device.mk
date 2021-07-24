@@ -94,7 +94,8 @@ PRODUCT_PACKAGES += \
 
 # Symbols
 PRODUCT_PACKAGES += \
-    libshim_showlogo
+    libshim_showlogo \
+    libshim_vtservice
 
 # Face Unlock
 PRODUCT_PACKAGES += \
