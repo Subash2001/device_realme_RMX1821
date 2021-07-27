@@ -26,4 +26,7 @@
     <!-- enable volte and vowifi icon as default -->
     <bool name="config_display_volte">true</bool>
     <bool name="config_display_vowifi">true</bool>
+    
+    <!-- Show the network traffic monitor on statusbar even if the device has a notch -->
+    <bool name="config_forceShowNetworkTrafficOnStatusBar">true</bool>
 </resources>
