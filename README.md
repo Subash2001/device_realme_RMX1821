@@ -30,3 +30,11 @@ This device tree can be used to build Nusantara OS Android11 for Realme 3/3i dev
 git clone https://github.com/PixelExperience/vendor_mediatek_ims vendor/mediatek/ims
 git clone https://github.com/PixelExperience/vendor_mediatek_interfaces vendor/mediatek/interfaces
 ```
+
+## For Reame Parts : clone [android_packages_apps_RealmeParts](https://github.com/techyminati/android_packages_apps_RealmeParts) into packages/apps/RealmeParts
+```
+git clone https://github.com/techyminati/android_packages_apps_RealmeParts -b lineage-18.1 packages/apps/RealmeParts
+```
+## For Realme Dirac : clone [android_packages_apps_RealmeDirac](https://github.com/techyminati/android_packages_apps_RealmeDirac) into packages/apps/RealmeDirac
+```
+git clone https://github.com/techyminati/android_packages_apps_RealmeDirac -b master packages/apps/RealmeDirac
