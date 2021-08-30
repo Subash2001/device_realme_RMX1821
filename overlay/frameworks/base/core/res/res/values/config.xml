@@ -383,4 +383,7 @@
          screenshot chord -->
     <integer name="config_screenshotChordKeyTimeout">0</integer>
 
+    <!-- Should the pinner service pin the Camera application? -->
+    <bool name="config_pinnerCameraApp">false</bool>
+
 </resources>
