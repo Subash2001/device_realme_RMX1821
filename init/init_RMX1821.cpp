@@ -147,4 +147,7 @@ void vendor_load_properties()
 
     // Workaround SafetyNet
     workaround_snet_properties();
+
+    // Misc
+    property_override("ro.apex.updatable", "false");
 }
