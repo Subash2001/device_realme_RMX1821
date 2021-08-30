@@ -17,5 +17,5 @@
 -->
 <resources>
     <!-- The absolute side margins of quick settings -->
-    <dimen name="rounded_corner_content_padding">7dp</dimen>
+    <dimen name="rounded_corner_content_padding">11dp</dimen>
 </resources>
