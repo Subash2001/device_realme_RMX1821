@@ -108,6 +108,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FaceUnlockService
 
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # IORap
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.iorapd.enable=true \
