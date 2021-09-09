@@ -33,7 +33,7 @@ git clone https://github.com/PixelExperience/vendor_mediatek_interfaces vendor/m
 
 ## For Reame Parts : clone [android_packages_apps_RealmeParts](https://github.com/techyminati/android_packages_apps_RealmeParts) into packages/apps/RealmeParts
 ```
-git clone https://github.com/techyminati/android_packages_apps_RealmeParts -b lineage-18.1 packages/apps/RealmeParts
+git clone https://github.com/CyberTechWorld/android_packages_apps_RealmeParts -b Q-11  packages/apps/RealmeParts
 ```
 ## For Realme Dirac : clone [android_packages_apps_RealmeDirac](https://github.com/techyminati/android_packages_apps_RealmeDirac) into packages/apps/RealmeDirac
 ```
