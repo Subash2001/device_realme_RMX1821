@@ -162,3 +162,5 @@ persist.sys.binary_xml=false
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
+# IORap
+persist.device_config.runtime_native_boot.iorap_readahead_enable=true
