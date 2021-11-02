@@ -116,8 +116,8 @@ ro.config.dha_th_rate=2.3 \
 ro.config.sdha_apps_bg_max=64 \
 ro.config.sdha_apps_bg_min=8 
 
-#props:disable hwc_vds *to fix screen recording lags 
-debug.sf.enable_hwc_vds=0
+# Zygote preforking
+persist.device_config.runtime_native.usap_pool_enabled=true
 
 # ZRAM
 ro.zram.mark_idle_delay_mins=60
