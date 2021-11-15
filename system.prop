@@ -32,6 +32,8 @@ ro.mediatek.wlan.p2p=1
 mediatek.wlan.ctia=0
 # MTK, mtk03034 20101213}
 
+# Fingerprint
+fingerprint.nocleanup=true
 
 #
 wifi.tethering.interface=ap0
