@@ -119,7 +119,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # IMS
-$(call inherit-product, vendor/mediatek/ims/mtk-ims.mk)
+$(call inherit-product, vendor/mediatek-ims/ims-vendor.mk)
 
 # EngineerMode
 $(call inherit-product, vendor/mediatek/ims/mtk-engi.mk)
