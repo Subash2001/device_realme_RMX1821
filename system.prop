@@ -136,21 +136,11 @@ ro.lmk.psi_complete_stall_ms=150
 ro.lmk.swap_free_low_percentage=20
 ro.lmk.kill_timeout_ms=100
 
-# Dex2oat
-dalvik.vm.dex2oat64.enabled=true
-dalvik.vm.image-dex2oat-filter=quicken
-dalvik.vm.image-dex2oat-threads=8
-dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7
-dalvik.vm.dex2oat-filter=quicken
-dalvik.vm.dex2oat-threads=8
-dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7
-dalvik.vm.boot-dex2oat-threads=8
-dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7
-
 # Iorap
 iorapd.perfetto.enable=true
 iorapd.readahead.enable=true
 ro.iorapd.enable=true
+
 
 # System
 persist.sys.binary_xml=false
