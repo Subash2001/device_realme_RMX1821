@@ -389,6 +389,7 @@
     <!-- Should the pinner service pin the Home application? -->
     <bool name="config_pinnerHomeApp">false</bool>
 
+
          <!-- Control whether Night display is available. This should only be enabled on devices
     that have a HWC implementation that can apply the matrix passed to setColorTransform
     without impacting power, performance, and app compatibility (e.g. protected content). -->
@@ -403,4 +404,8 @@
     <!-- Screen off delay --> 
     <integer name="config_screen_off_delay">0</integer>
 	
+
+    <!-- Exempt ImsService from privacy (location) indicators -->
+    <string name="config_systemAudioIntelligence" translatable="false">com.mediatek.ims</string>
+
 </resources>
