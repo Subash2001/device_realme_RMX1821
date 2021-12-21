@@ -1,26 +1,25 @@
-From ff71ba26fddbfb812d34e4fde4d942c057039fb9 Mon Sep 17 00:00:00 2001
-From: Maanush Putcha <p.maanush@gmail.com>
-Date: Tue, 24 Nov 2020 06:51:39 +0530
+From c94e0b5d27d6c33e7f9689f0b3fbedb267c2c4aa Mon Sep 17 00:00:00 2001
+From: Maanush2004 <p.maanush@gmail.com>
+Date: Tue, 23 Nov 2021 11:34:11 +0000
 Subject: [PATCH] build: Add option to append vbmeta image to boot image
 
 * Partially taken from https://github.com/mtk-watch/android_build_make/commit/89d279a7ab1d0249f89c84d53fd4dbd786d19727
 
 * Set MAIN_VBMETA_IN_BOOT=yes for the vbmeta to get appended to boot image
 
-Signed-off-by: Maanush Putcha <p.maanush@gmail.com>
-Change-Id: Ie11338be0dc76605e38644cf7befb2483d816d6e
+Signed-off-by: CyberTechWorld <cybertechworld.ctw@gmail.com>
 ---
  core/Makefile                                 | 33 +++++++++++++++++--
- core/main.mk                                  |  4 +--
+ core/main.mk                                  |  3 +-
  tools/releasetools/add_img_to_target_files.py | 29 ++++++++++++++++
  tools/releasetools/common.py                  | 15 ++++++++-
- 4 files changed, 76 insertions(+), 5 deletions(-)
+ 4 files changed, 76 insertions(+), 4 deletions(-)
 
 diff --git a/core/Makefile b/core/Makefile
-index 9f5ec7022..eda923409 100644
+index 67e74678b..ad5c9f2e6 100644
 --- a/core/Makefile
 +++ b/core/Makefile
-@@ -1187,9 +1187,11 @@ endif # BUILDING_RAMDISK_IMAGE
+@@ -836,9 +836,11 @@ endif # BUILDING_RAMDISK_IMAGE
  # This is defined here since we may be building recovery as boot
  # below and only want to define this once
  ifneq ($(strip $(BOARD_KERNEL_BINARIES)),)
@@ -33,16 +32,16 @@ index 9f5ec7022..eda923409 100644
 +  MTK_BOOTIMAGE_TARGET := $(PRODUCT_OUT)/boot.img
  endif
  
- ifdef BOARD_BOOTIMAGE_PARTITION_SIZE
-@@ -1345,6 +1347,7 @@ INSTALLED_BOOTIMAGE_TARGET := $(PRODUCT_OUT)/boot.img
- $(eval $(call copy-one-file,$(BOARD_PREBUILT_BOOTIMAGE),$(INSTALLED_BOOTIMAGE_TARGET)))
+ INTERNAL_PREBUILT_BOOTIMAGE :=
+@@ -1066,6 +1068,7 @@ endif # BOARD_AVB_ENABLE
+ 
  else # BOARD_PREBUILT_BOOTIMAGE not defined
  INSTALLED_BOOTIMAGE_TARGET :=
 +MTK_BOOTIMAGE_TARGET :=
  endif # BOARD_PREBUILT_BOOTIMAGE
  endif # TARGET_NO_KERNEL
- 
-@@ -3847,6 +3850,23 @@ endif # BUILDING_VBMETA_IMAGE
+ endif # my_installed_prebuilt_gki_apex not defined
+@@ -3971,6 +3974,23 @@ endif # BUILDING_VBMETA_IMAGE
  
  endif # BOARD_AVB_ENABLE
  
@@ -63,10 +62,10 @@ index 9f5ec7022..eda923409 100644
 +endif # MAIN_VBMETA_IN_BOOT
 +endif # TARGET_NO_KERNEL
 +
- # -----------------------------------------------------------------
- # Check VINTF of build
- 
-@@ -4405,6 +4425,9 @@ ifneq (,$(strip $(BOARD_CUSTOMIMAGES_PARTITION_LIST)))
+ # List of files from all images
+ INTERNAL_ALLIMAGES_FILES := \
+     $(FULL_SYSTEMIMAGE_DEPS) \
+@@ -4610,6 +4630,9 @@ ifneq (,$(strip $(BOARD_CUSTOMIMAGES_PARTITION_LIST)))
  	    echo "avb_$(partition)_partition_size=$(BOARD_AVB_$(call to-upper,$(partition))_PARTITION_SIZE)"  >> $@; \
  	    echo "avb_$(partition)_image_list=$(foreach image,$(BOARD_AVB_$(call to-upper,$(partition))_IMAGE_LIST),$(notdir $(image)))" >> $@;)
  endif # BOARD_CUSTOMIMAGES_PARTITION_LIST
@@ -76,15 +75,15 @@ index 9f5ec7022..eda923409 100644
  ifneq (,$(strip $(BOARD_AVB_VBMETA_SYSTEM)))
  	$(hide) echo "avb_vbmeta_system=$(BOARD_AVB_VBMETA_SYSTEM)" >> $@
  	$(hide) echo "avb_vbmeta_system_args=$(BOARD_AVB_MAKE_VBMETA_SYSTEM_IMAGE_ARGS)" >> $@
-@@ -4629,6 +4652,7 @@ endif
- # directories are up-to-date.
- $(BUILT_TARGET_FILES_PACKAGE): \
+@@ -4967,6 +4990,7 @@ $(BUILT_TARGET_FILES_PACKAGE): \
+ 	    $(INSTALLED_ANDROID_INFO_TXT_TARGET) \
+ 	    $(INSTALLED_KERNEL_TARGET) \
  	    $(INSTALLED_RAMDISK_TARGET) \
 +	    $(MTK_BOOTIMAGE_TARGET) \
- 	    $(INSTALLED_BOOTIMAGE_TARGET) \
- 	    $(INSTALLED_VENDOR_BOOTIMAGE_TARGET) \
- 	    $(INSTALLED_RADIOIMAGE_TARGET) \
-@@ -4963,6 +4987,11 @@ endif
+ 	    $(INSTALLED_DTBIMAGE_TARGET) \
+ 	    $(INSTALLED_2NDBOOTLOADER_TARGET) \
+ 	    $(BOARD_PREBUILT_DTBOIMAGE) \
+@@ -5363,6 +5387,11 @@ endif
  ifeq ($(BUILD_QEMU_IMAGES),true)
  	$(hide) AVBTOOL=$(AVBTOOL) $(MK_VBMETA_BOOT_KERNEL_CMDLINE_SH) $(zip_root)/IMAGES/vbmeta.img \
  	    $(zip_root)/IMAGES/system.img $(zip_root)/IMAGES/VerifiedBootParams.textproto
@@ -97,10 +96,10 @@ index 9f5ec7022..eda923409 100644
  	@# Zip everything up, preserving symlinks and placing META/ files first to
  	@# help early validation of the .zip file while uploading it.
 diff --git a/core/main.mk b/core/main.mk
-index b91c51acf..9f3fb5c3e 100644
+index 9fcfedd99..bb8c12946 100644
 --- a/core/main.mk
 +++ b/core/main.mk
-@@ -1426,7 +1426,7 @@ systemotherimage: $(INSTALLED_SYSTEMOTHERIMAGE_TARGET)
+@@ -1558,7 +1558,7 @@ systemotherimage: $(INSTALLED_SYSTEMOTHERIMAGE_TARGET)
  superimage_empty: $(INSTALLED_SUPERIMAGE_EMPTY_TARGET)
  
  .PHONY: bootimage
@@ -109,20 +108,19 @@ index b91c51acf..9f3fb5c3e 100644
  
  .PHONY: bootimage_debug
  bootimage_debug: $(INSTALLED_DEBUG_BOOTIMAGE_TARGET)
-@@ -1445,7 +1445,7 @@ auxiliary: $(INSTALLED_AUX_TARGETS)
- droidcore: $(filter $(HOST_OUT_ROOT)/%,$(modules_to_install)) \
+@@ -1582,6 +1582,7 @@ droidcore-unbundled: $(filter $(HOST_OUT_ROOT)/%,$(modules_to_install)) \
      $(INSTALLED_SYSTEMIMAGE_TARGET) \
      $(INSTALLED_RAMDISK_TARGET) \
--    $(INSTALLED_BOOTIMAGE_TARGET) \
+     $(INSTALLED_BOOTIMAGE_TARGET) \
 +    $(MTK_BOOTIMAGE_TARGET) \
      $(INSTALLED_RADIOIMAGE_TARGET) \
      $(INSTALLED_DEBUG_RAMDISK_TARGET) \
      $(INSTALLED_DEBUG_BOOTIMAGE_TARGET) \
 diff --git a/tools/releasetools/add_img_to_target_files.py b/tools/releasetools/add_img_to_target_files.py
-index f58b6978a..e2fa5fdcf 100644
+index babfc7dca..abf6c71ba 100644
 --- a/tools/releasetools/add_img_to_target_files.py
 +++ b/tools/releasetools/add_img_to_target_files.py
-@@ -452,6 +452,31 @@ def AddUserdata(output_zip):
+@@ -486,6 +486,31 @@ def AddUserdata(output_zip):
    common.CheckSize(img.name, "userdata.img", OPTIONS.info_dict)
    img.Write()
  
@@ -154,7 +152,7 @@ index f58b6978a..e2fa5fdcf 100644
  
  def AddVBMeta(output_zip, partitions, name, needed_partitions):
    """Creates a VBMeta image and stores it in output_zip.
-@@ -891,6 +916,10 @@ def AddImagesToTargetFiles(filename):
+@@ -916,6 +941,10 @@ def AddImagesToTargetFiles(filename):
      banner("custom images for " + partition_name)
      partitions[partition_name] = AddCustomImages(output_zip, partition_name)
  
@@ -166,10 +164,10 @@ index f58b6978a..e2fa5fdcf 100644
      # vbmeta_partitions includes the partitions that should be included into
      # top-level vbmeta.img, which are the ones that are not included in any
 diff --git a/tools/releasetools/common.py b/tools/releasetools/common.py
-index 6e28c7a0a..b2f6a3977 100644
+index 241ef4b65..3e070f8ec 100644
 --- a/tools/releasetools/common.py
 +++ b/tools/releasetools/common.py
-@@ -1324,7 +1324,7 @@ def _BuildBootableImage(image_name, sourcedir, fs_config_file, info_dict=None,
+@@ -1704,7 +1704,7 @@ def _BuildBootableImage(image_name, sourcedir, fs_config_file, info_dict=None,
      img_keyblock.close()
  
    # AVB: if enabled, calculate and add hash to boot.img or recovery.img.
@@ -178,7 +176,7 @@ index 6e28c7a0a..b2f6a3977 100644
      avbtool = info_dict["avb_avbtool"]
      if partition_name == "recovery":
        part_size = info_dict["recovery_size"]
-@@ -1339,6 +1339,19 @@ def _BuildBootableImage(image_name, sourcedir, fs_config_file, info_dict=None,
+@@ -1719,6 +1719,19 @@ def _BuildBootableImage(image_name, sourcedir, fs_config_file, info_dict=None,
        cmd.extend(shlex.split(args))
      RunAndCheckOutput(cmd)
  
@@ -199,5 +197,5 @@ index 6e28c7a0a..b2f6a3977 100644
    data = img.read()
  
 -- 
-2.27.0
+2.17.1
 
