@@ -25,11 +25,6 @@ PRODUCT_COPY_FILES := \
 	$(DEVICE_PATH)/configs/permissions/privapp-permissions-whitelist-product.xml:$(TARGET_COPY_OUT_SYSTEM)/product/etc/permissions/privapp-permissions-whitelist-product.xml \
 	$(DEVICE_PATH)/configs/permissions/privapp-permissions-whitelist-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-whitelist-system.xml
 
-# Notch Cutout
-PRODUCT_PACKAGES += \
-    NoCutoutOverlay \
-    NotchBarKiller
-
 # GCam
 PRODUCT_PACKAGES += \
     GoogleCameraGo
@@ -38,9 +33,6 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += \
 	$(DEVICE_PATH)/overlay \
 	$(DEVICE_PATH)/overlay-lineage
-
-PRODUCT_PACKAGES += \
-    NotchBarKiller
 
 # Dependencies of kpoc_charger
 PRODUCT_PACKAGES += \
