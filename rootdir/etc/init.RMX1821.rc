@@ -33,6 +33,10 @@ on boot
 on init
     mount none /vendor/lost+found /vendor/overlay bind
 
+on init   
+    # Force disable ViLTE support
+    setprop persist.vendor.vilte_support 0
+
 on post-fs
     # Disable OEM Lights
     mount none /dev/null vendor/lib/hw/lights.mt6771.so bind
