@@ -21,6 +21,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit common ArrowOS configurations
 $(call inherit-product, vendor/arrow/config/common.mk)
 
+# ArrowOS additions
+$(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
+
 # Boot Animation
 TARGET_BOOT_ANIMATION_RES := 720
 
