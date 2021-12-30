@@ -32,6 +32,16 @@ ro.mediatek.wlan.p2p=1
 mediatek.wlan.ctia=0
 # MTK, mtk03034 20101213}
 
+# Dex
+persist.bg.dexopt.enable=true
+dalvik.vm.dexopt.secondary=true
+pm.dexopt.install=speed-profile
+pm.dexopt.bg-dexopt=speed-profile
+pm.dexopt.boot=verify
+pm.dexopt.first-boot=quicken
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.dex2oat-threads=6
+
 # Fingerprint
 fingerprint.nocleanup=true
 
