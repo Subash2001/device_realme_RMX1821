@@ -22,4 +22,8 @@
 <resources>
     <!-- Doze: does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
+    
+    <!-- enable volte and vowifi icon as default -->
+    <bool name="config_display_volte">true</bool>
+    <bool name="config_display_vowifi">true</bool>
 </resources>
