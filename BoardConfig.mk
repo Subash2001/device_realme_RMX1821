@@ -156,7 +156,8 @@ MAIN_VBMETA_IN_BOOT := yes
 # We need this for apns-conf
 # We would like to override instead of merge
 BUILD_BROKEN_DUP_RULES := true
-
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_PREBUILT_ELF_FILES := true
 
 #Board init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_RMX1821
