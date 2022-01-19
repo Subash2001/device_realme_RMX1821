@@ -24,6 +24,8 @@ $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 # Boot Animation
 TARGET_BOOT_ANIMATION_RES := 720
 
+TARGET_SUPPORTS_QUICK_TAP := true
+
 # Inherit from Realme RMX1821
 $(call inherit-product, device/realme/RMX1821/device.mk)
 
