@@ -33,6 +33,7 @@ mediatek.wlan.ctia=0
 # MTK, mtk03034 20101213}
 
 # Dex
+dalvik.vm.dex2oat64.enabled=true
 persist.bg.dexopt.enable=true
 dalvik.vm.dexopt.secondary=true
 pm.dexopt.install=speed-profile
