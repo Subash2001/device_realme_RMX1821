@@ -106,6 +106,9 @@ persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
 
+# OneHandedMode
+ro.support_one_handed_mode=true
+
 # Charger
 ro.charger.enable_suspend=true
 
