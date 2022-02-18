@@ -121,9 +121,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # IMS
 $(call inherit-product, vendor/mediatek-ims/ims-vendor.mk)
 
-# EngineerMode
-$(call inherit-product, vendor/mediatek/ims/mtk-engi.mk)
-
 # Call proprietary blob setup
 $(call inherit-product-if-exists, vendor/realme/RMX1821/RMX1821-vendor.mk)
 
@@ -140,5 +137,4 @@ PRODUCT_COPY_FILES += \
 # Freeform Multiwindow
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml
-
 
