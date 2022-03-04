@@ -18,3 +18,4 @@ allow system_app sysfs_battery_supply:file { getattr };
 # Allow system_app to set cabc props
 set_prop(system_app, cabc_prop)
 
+set_prop(system_app, dt2w_prop)
