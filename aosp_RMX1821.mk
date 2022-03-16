@@ -18,18 +18,16 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff
-$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
+# Inherit some common Aosp stuff
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
-# Gapps
-TARGET_BOOT_ANIMATION_RES:= 720
-TARGET_GAPPS_ARCH := arm64
-IS_PHONE := true
+# Boot Animation
+TARGET_BOOT_ANIMATION_RES := 720
 
 # Inherit from Realme RMX1821
 $(call inherit-product, device/realme/RMX1821/device.mk)
 
-PRODUCT_NAME := nad_RMX1821
+PRODUCT_NAME := aosp_RMX1821
 PRODUCT_DEVICE := RMX1821
 PRODUCT_MANUFACTURER := Realme
 PRODUCT_BRAND := Realme
