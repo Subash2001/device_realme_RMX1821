@@ -19,22 +19,22 @@ Front Camera | 13 MP, f/2.0, (wide), 1/3.1", 1.12µm
 
 ---
 
-This device tree can be used to build Nusantara OS Android11 for Realme 3/3i devices with RealmeUI vendor
+This device tree can be used to build Aosp for Realme 3/3i devices with RealmeUI vendor
 
-## Applying [patches](https://github.com/CyberTechWorld/android_device_realme_RMX1821/tree/nad11/patches) in their respective directories of ROM source is mandatory.
+## Applying [patches](https://github.com/subash2001/device_realme_RMX1821/tree/eleven/patches/build/make) in their respective directories of ROM source is mandatory.
 
 ## For IMS,
-## clone [vendor_mediatek_ims](https://github.com/PixelExperience/vendor_mediatek_ims) into vendor/mediatek/ims and
-## clone [vendor_mediatek_interfaces](https://github.com/PixelExperience/vendor_mediatek_interfaces) into vendor/mediatek/interfaces
+## clone [vendor_mediatek_ims](https://github.com/Los-FE/vendor_mediatek_ims.git vendor/mediatek/ims) into vendor/mediatek/ims and interfaces
+## clone [vendor_mediatek_interfaces](https://github.com/Los-FE/vendor_mediatek_interfaces.git vendor/mediatek/interfaces) into vendor/mediatek/interfaces
 ```
-git clone https://github.com/PixelExperience/vendor_mediatek_ims vendor/mediatek/ims
-git clone https://github.com/PixelExperience/vendor_mediatek_interfaces vendor/mediatek/interfaces
+git clone https://github.com/Los-FE/vendor_mediatek_ims vendor/mediatek/ims vendor/mediatek/ims
+git clone https://github.com/Los-FE/vendor_mediatek_interfaces vendor/mediatek/interfaces vendor/mediatek/interfaces
 ```
 
-## For Reame Parts : clone [android_packages_apps_RealmeParts](https://github.com/techyminati/android_packages_apps_RealmeParts) into packages/apps/RealmeParts
+## For Reame Parts : clone [android_packages_apps_RealmeParts](https://github.com/HyperTeam/android_packages_apps_RealmeParts.git) into packages/apps/RealmeParts
 ```
-git clone https://github.com/CyberTechWorld/android_packages_apps_RealmeParts -b Q-11  packages/apps/RealmeParts
+git clone https://github.com/HyperTeam/android_packages_apps_RealmeParts.git -b lineage-18.1 packages/apps/RealmeParts
 ```
 ## For Realme Dirac : clone [android_packages_apps_RealmeDirac](https://github.com/techyminati/android_packages_apps_RealmeDirac) into packages/apps/RealmeDirac
 ```
-git clone https://github.com/techyminati/android_packages_apps_RealmeDirac -b master packages/apps/RealmeDirac
+git clone https://github.com/techyminati/android_packages_apps_RealmeDirac -b lineage-18.1 packages/apps/RealmeDirac
