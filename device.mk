@@ -131,7 +131,7 @@ $(call inherit-product-if-exists, vendor/realme/RMX1821/RMX1821-vendor.mk)
 $(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
 
 # RealmeDirac
-$(call inherit-product, packages/apps/RealmeDirac/dirac.mk)
+$(call inherit-product-if-exists, packages/apps/RealmeDirac/dirac.mk)
 
 # Misc
 PRODUCT_COPY_FILES += \
