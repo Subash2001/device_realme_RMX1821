@@ -6,14 +6,14 @@
 # 1 "<built-in>" 2
 # 1 "vendor/mediatek/proprietary/hardware/fstab/mt6771/fstab.in.mt6771" 2
 # 169 "vendor/mediatek/proprietary/hardware/fstab/mt6771/fstab.in.mt6771"
-/dev/block/platform/bootdevice/by-name/system /system ext4 ro wait,,avb=boot,,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey,async_discard
+/dev/block/platform/bootdevice/by-name/system /system ext4 ro wait,,avb=boot,,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey,async_discard,readahead_size_kb=128
 
-/dev/block/platform/bootdevice/by-name/vendor /vendor ext4 ro wait,,avb,,first_stage_mount,async_discard
+/dev/block/platform/bootdevice/by-name/vendor /vendor ext4 ro wait,,avb,,first_stage_mount,async_discard,readahead_size_kb=128
 # 183 "vendor/mediatek/proprietary/hardware/fstab/mt6771/fstab.in.mt6771"
 /dev/block/platform/bootdevice/by-name/cache /cache ext4 noatime,nosuid,nodev,noauto_da_alloc,async_discard wait,check,formattable
 
 
-/dev/block/platform/bootdevice/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,errors=panic,async_discard wait,check,formattable,quota,reservedsize=128m,fileencryption=aes-256-xts
+/dev/block/platform/bootdevice/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,errors=panic,async_discard wait,check,formattable,quota,reservedsize=128m,fileencryption=aes-256-xts,readahead_size_kb=128
 /dev/block/platform/bootdevice/by-name/protect1 /mnt/vendor/protect_f ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc,async_discard wait,check,formattable
 /dev/block/platform/bootdevice/by-name/protect2 /mnt/vendor/protect_s ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc,async_discard wait,check,formattable
 /dev/block/platform/bootdevice/by-name/nvdata /mnt/vendor/nvdata ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc,async_discard wait,check,formattable
