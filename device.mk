@@ -71,10 +71,6 @@ PRODUCT_PACKAGES += \
     fstab.enableswap \
     perf_profile.sh
 
-# Doze
-PRODUCT_PACKAGES += \
-    RealmeDoze
-
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.RMX1821
