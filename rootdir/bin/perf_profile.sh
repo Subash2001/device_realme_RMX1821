@@ -44,6 +44,14 @@ echo 0 > /proc/touchpanel/game_switch_enable
 case $1 in
 0)
 	## Balanced profile(use all default settings)
+	echo 0 > /proc/touchpanel/oppo_tp_limit_enable
+	echo 1 > /proc/touchpanel/oppo_tp_direction
+	echo 1 > /proc/touchpanel/game_switch_enable
+
+        echo 0 > /sys/kernel/ccci/debug
+       
+        stop logd
+	
 	;;
 1)
 	## Power saving profile
