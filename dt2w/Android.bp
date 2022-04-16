@@ -18,7 +18,7 @@
 android_app {
     name: "DT2W-Service-RMX1821",
 
-    srcs: ["src/**/*.java"],
+    srcs: ["src/**/*.kt"],
     resource_dirs: ["res"],
 
     certificate: "platform",
