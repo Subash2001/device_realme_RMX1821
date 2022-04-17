@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2022 StatiX
+ * SPDX-License-Identifier: GPL-2.0-only
+ */
+
 package org.lineageos.dt2w.RMX1821
 
 import android.app.Service
@@ -13,10 +18,10 @@ import android.os.SystemProperties
 import android.os.UserHandle
 import android.provider.Settings.Secure
 
-class DT2WServiceBegonia : Service() {
-    private var mContext: Context
-    private var mHandler: Handler
-    private var mCustomSettingsObserver: CustomSettingsObserver
+class DoubleTapService : Service() {
+    private lateinit var mContext: Context
+    private lateinit var mHandler: Handler
+    private lateinit var mCustomSettingsObserver: CustomSettingsObserver
 
     override fun onBind(intent: Intent?): IBinder? {
         return null
@@ -54,8 +59,4 @@ class DT2WServiceBegonia : Service() {
             }
         }
     }
-
-    companion object {
-        private const val TAG = "DT2WServiceRMX1821"
-    }
-} 
+}
