@@ -79,7 +79,7 @@ ro.sys.usb.charging.only=yes
 ro.camera.sound.forced=0
 ro.audio.silent=0
 
-ro.config.vc_call_vol_steps=6
+ro.config.vc_call_vol_steps=7
 
 ro.zygote.preload.enable=0
 

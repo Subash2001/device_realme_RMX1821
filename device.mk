@@ -76,6 +76,9 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
     SystemUI
 
+PRODUCT_PACKAGES += \
+    MtkInCallService
+
 # Init
 PRODUCT_PACKAGES += \
     fstab.mt6771 \
