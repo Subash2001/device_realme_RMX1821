@@ -106,10 +106,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FaceUnlockService
 
-# Remove unwanted packages
-PRODUCT_PACKAGES += \
-    RemovePackages
-
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face.moto_unlock_service=true
 
