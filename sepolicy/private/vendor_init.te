@@ -1,1 +1,7 @@
 get_prop(vendor_init, dt2w_prop)
+
+allow vendor_init system_prop:file { read };
+allow vendor_init default_prop:file { read };
+allow vendor_init system_data_file:dir { create };
+allow vendor_init system_data_file:dir { write };
+allow vendor_init loop_control_device:chr_file { getattr };
