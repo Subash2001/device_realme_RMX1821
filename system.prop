@@ -155,6 +155,9 @@ ro.lmk.psi_complete_stall_ms=150
 ro.lmk.swap_free_low_percentage=20
 ro.lmk.kill_timeout_ms=100
 
+# Iorap
+persist.device_config.runtime_native_boot.iorap_readahead_enable=true
+iorapd.readahead.enable=true
 
 # System
 persist.sys.binary_xml=false
