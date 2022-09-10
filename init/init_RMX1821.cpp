@@ -142,8 +142,8 @@ void vendor_load_properties()
     init_variant_specific_props();
 
     // fingerprint
-    property_override("ro.build.description", "google/raven/raven:13/TP1A.220624.021/8877034:user/release-keys ");
-    property_override_prop("ro.build.fingerprint", "google/raven/raven:13/TP1A.220624.021/8877034:user/release-keys");
+    property_override("ro.build.description", "google/raven/raven:13/TP1A.220905.004/8927612:user/release-keys ");
+    property_override_prop("ro.build.fingerprint", "google/raven/raven:13/TP1A.220905.004/8927612:user/release-keys");
 
     // Workaround SafetyNet
     workaround_snet_properties();
