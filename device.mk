@@ -114,8 +114,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face.moto_unlock_service=true
 
-# IMS
-$(call inherit-product, vendor/mediatek-ims/ims-vendor.mk)
 
 # Call proprietary blob setup
 $(call inherit-product-if-exists, vendor/realme/RMX1821/RMX1821-vendor.mk)
