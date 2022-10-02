@@ -103,7 +103,7 @@ TARGET_COPY_OUT_PRODUCT := system/product
 # System Properties
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
-TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
