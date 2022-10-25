@@ -61,6 +61,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ImsInit
 
+# Power
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/power/powercontable.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powercontable.xml \
+    $(DEVICE_PATH)/configs/power/powerscntbl.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerscntbl.xml
+
 # DT2W
 PRODUCT_PACKAGES += \
     DT2W-Service-RMX1821
@@ -99,7 +104,7 @@ PRODUCT_PACKAGES += \
 
 # Symbols
 PRODUCT_PACKAGES += \
-    libshim_showlogo
+    libshim_showlogo \
     libshim_vtservice
 
 # Face Unlock
