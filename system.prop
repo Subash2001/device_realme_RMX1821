@@ -166,5 +166,4 @@ persist.sys.binary_xml=false
 persist.sys.fuse.passthrough.enable=true
 
 # Graphics
-debug.hwui.renderer=opengl
 ro.config.avoid_gfx_accel=true
