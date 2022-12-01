@@ -1,11 +1,5 @@
 # All files are taken from RMX1821EX_11.C.22, unless their sha1sum is specified
 
-# Offline Charging
-bin/kpoc_charger
-etc/init/kpoc_charger.rc
-lib/libshowlogo.so
-lib/libsysenv_system.so
-
 # APNs
 etc/apns-conf.xml:product/etc/apns-conf.xml
 
